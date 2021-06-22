@@ -13,17 +13,14 @@ inputs:
   clone_directory_root:
     description: Root directory to clone the source repository into
     default: /tmp
-  destination_path:
-    description: The directory to copy the config to within the docker container
-    default: ${{ github.workspace }}
   destination_filename:
-    description: Name of the config file to be written
+    description: Name of the configuration file to be written
     default: .tflint.hcl
   token:
     description: Github access token, required for private repositories
 outputs:
-  path:
-    description: Filepath of the retrieved tflint config
+  filename:
+    description: Filename of the copied tflint configuration
 runs:
   using: docker
   image: Dockerfile
