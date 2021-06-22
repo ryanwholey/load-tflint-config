@@ -21,7 +21,6 @@ inputs:
 outputs:
   path:
     description: Filepath of the retrieved tflint config
-    value: ${{ inputs.destination_path }}
 runs:
   using: docker
   image: Dockerfile
