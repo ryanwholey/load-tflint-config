@@ -10,5 +10,6 @@ jobs:
       INPUT_SOURCE_PATH: /test/tflint.hcl
       INPUT_DESTINATION_FILENAME: test-tflint.hcl
     steps:
+      - uses: actions/checkout@v2
       - run: ./entrypoint.sh
       - run: test -f $INPUT_DESTINATION_FILENAME && echo "test file found"
