@@ -1,0 +1,34 @@
+name: Load Remote tflint Config
+description: Loads a remote tflint config to a local action workspace
+inputs:
+  source-repo:
+    description: The remote repository containing the tflint config
+    required: true
+  source-path:
+    description: The config filepath within the source repo
+    default: .tflint.hcl
+  source-repo-branch:
+    description: Branch of the remote repository to target
+    default: main
+  clone-directory-root:
+    description: Root directory to clone the source repository into
+    default: /tmp
+  destination-path:
+    description: The location in the local workspace to store the tflint config
+    default: /tmp/.tflint.hcl
+  token:
+    description: Github access token, required for private repositories
+outputs:
+  path:
+    description: Filepath of the retrieved tflint config
+    value: ${{ inputs.destination-path }}
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.source-repo }}
+    - ${{ inputs.source-path }}
+    - ${{ inputs.source-repo-branch }}
+    - ${{ inputs.clone-directory-root }}
+    - ${{ inputs.destination-path }}
+    - ${{ inputs.token }}
