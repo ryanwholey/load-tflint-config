@@ -12,3 +12,5 @@ git clone --single-branch --branch "$INPUT_SOURCE_REPO_BRANCH" "https://${auth}g
 cp "${INPUT_CLONE_DIRECTORY_ROOT}/${INPUT_SOURCE_REPO}/${INPUT_SOURCE_PATH}" $INPUT_DESTINATION_PATH
 
 echo "::set-output name=path::${INPUT_DESTINATION_PATH}"
+
+env
