@@ -15,7 +15,7 @@ inputs:
     default: /tmp
   destination_directory:
     description: The directory to copy the config to within the docker container
-    default: ${{ runner.temp }}
+    default: ${{ github.workspace }}
   destination_filename:
     description: Name of the config file to be written
     default: .tflint.hcl

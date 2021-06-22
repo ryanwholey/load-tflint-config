@@ -12,7 +12,3 @@ git clone --single-branch --branch "$INPUT_SOURCE_REPO_BRANCH" "https://${auth}g
 cp "${INPUT_CLONE_DIRECTORY_ROOT}/${INPUT_SOURCE_REPO}/${INPUT_SOURCE_PATH}" "${INPUT_DESTINATION_PATH}/${INPUT_DESTINATION_FILENAME}"
 
 echo "::set-output name=filename::${INPUT_DESTINATION_FILENAME}"
-
-echo bar > $RUNNER_TEMP/foo
-
-env
