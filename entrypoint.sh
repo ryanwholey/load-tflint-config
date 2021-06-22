@@ -2,9 +2,6 @@
 
 set -ex
 
-
-env 
-
 if [ -z "$INPUT_TOKEN" ] ; then
   auth=""
 else 

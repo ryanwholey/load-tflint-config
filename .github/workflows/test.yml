@@ -1,0 +1,14 @@
+on:
+  [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      INPUT_SOURCE_REPO: ${{ github.repository }}
+      INPUT_SOURCE_REPO_BRANCH: main
+      INPUT_CLONE_DIRECTORY_ROOT: /tmp
+      INPUT_SOURCE_PATH: /test/tflint.hcl
+      INPUT_DESTINATION_FILENAME: test-tflint.hcl
+    steps:
+      - run: ./entrypoint.sh
+      - run: test -f $INPUT_DESTINATION_FILENAME && echo "test file found"
