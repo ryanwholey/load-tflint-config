@@ -13,7 +13,7 @@ inputs:
   clone_directory_root:
     description: Root directory to clone the source repository into
     default: /tmp
-  destination_directory:
+  destination_path:
     description: The directory to copy the config to within the docker container
     default: ${{ github.workspace }}
   destination_filename:
